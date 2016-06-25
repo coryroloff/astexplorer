@@ -1,0 +1,3 @@
+{#section}
+    {@helper param1="hi" param2=12.456 param3="start{reference}end" /}
+{/section}
