@@ -1,3 +1,60 @@
-{#section}
-    {@helper param1="hi" param2=12.456 param3="start{reference}end" /}
-{/section}
+<h1>hello, world!</h1>
+<h1>hello,\nworld!</h1>
+<h1>hello,\r\nworld!</h1>
+{single-key}
+{single-key/}
+{single-key /}
+{single-key|js}
+{single-key|js/}
+{single-key|js|s}
+{single-key|js|s/}
+{   single-key          }
+{one.two.three.four.five}
+{one.two.three.four.five/}
+{one.two.three.four.five|js}
+{one.two.three.four.five|js/}
+{one.two.three.four.five|js|s}
+{one.two.three.four.five|js|s/}
+{        one.two.three.four.five   }
+{.one.two.three}
+{.}
+{.[0]}
+{.thing}
+{.thing.thing}
+{.thing[1]}
+{.thing.two[2]}
+{[0].one}
+{[1].thing[1]}
+{#standard}{/standard}
+{#standard}{#inner-standard}{/inner-standard}{/standard}
+{?exists}{/exists}
+{^not-exists}{/not-exists}
+{@helper}{/helper}
+{+block}{/block}
+{<inline-partial}{/inline-partial}
+{?exists/}
+{#section key=value newKey=three.two.one}{/section}
+{#section key=value newKey=three.two.one /}
+{?exists}block{:else}else{:custom}custom{/exists}
+{+block}<p>{notbuffer}</p>{/block}
+{#section:change.the.context}{/section}
+{#section myparam="starting {~lb} right here {one.two} {~rb} ending over here"}{/section}
+{#section myparam=1 /}
+{#section myparam=562.123426/}
+{#section myparam=235./}
+{#.one.two.three}{/.one.two.three}
+{%pragma}{/pragma}
+{! {?exists}{@helper param="hello"/}, {world}!{/exists} !}
+{~s}
+{~n}
+{~r}
+{~lb}
+{~rb}
+{` this {is} a {#raw /} node`}
+{>"mypartial" /}
+{> "this is {variable-here} my partial" /}
+{> "thing":my.context /}
+{> "thing" myparam="literal" /}
+{> "thing" myparam=443.2 /}
+{> "thing" myparam="start{ref}end" /}
+{> "{.one.two.three}" /}
